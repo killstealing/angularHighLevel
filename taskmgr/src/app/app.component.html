@@ -1,0 +1,19 @@
+<mat-sidenav-container [class.myapp-dark-theme]="theme">
+  <mat-sidenav #sidenav position="start" mode="push">
+    <app-sidebar (navClickEvent)="sidenav.toggle();"></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="site">
+      <header>
+        <app-header (clickMenu)="sidenav.toggle();" (toggleThemeEvent)="switchTheme($event)"></app-header>
+      </header>
+      <main>
+        <router-outlet></router-outlet>
+        <!-- <div class="square" [@square]="squareState" (click)="onClick()"></div> -->
+      </main>
+      <footer>
+        <app-footer></app-footer>
+      </footer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

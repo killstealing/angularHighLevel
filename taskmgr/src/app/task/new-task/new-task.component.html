@@ -1,0 +1,40 @@
+<form [formGroup]="formModel" (ngSubmit)="save($event)">
+  <h3 mat-dialog-title>{{title}}:</h3>
+  <mat-dialog-content>
+    <mat-input-container class="full-width">
+      <input matInput type="text" placeholder="任务内容" formControlName="title">
+    </mat-input-container>
+    <mat-radio-group class="full-width" formControlName="priority">
+      <mat-radio-button value="1">普通</mat-radio-button>
+      <mat-radio-button value="2">重要</mat-radio-button>
+      <mat-radio-button value="3">紧急</mat-radio-button>
+    </mat-radio-group>
+    <mat-input-container class="full-width">
+      <!-- <input type="text" matInput [matDatepicker]="end" disabled placeholder="选择截止日期">
+      <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+      <mat-datepicker #end disabled="false"></mat-datepicker> -->
+      <input type="text" formControlName="dueDate" matInput [matDatepicker]="end" placeholder="选择截止日期">
+      <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
+      <mat-datepicker #end></mat-datepicker>
+    </mat-input-container>
+    <mat-input-container class="full-width">
+      <input type="text" formControlName="reminder" matInput placeholder="选择提醒日期" [matDatepicker]="reminder">
+      <mat-datepicker-toggle matSuffix [for]="reminder"></mat-datepicker-toggle>
+      <mat-datepicker #reminder></mat-datepicker>
+    </mat-input-container>
+    <label class="full-width">更改参与者： </label>
+    <mat-input-container class="full-width">
+      <input type="text" matInput placeholder="请输入成员email" [matAutocomplete]="auto"
+        formControlName="ownerEmail">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let item of items" [value]="item.email">
+          {{item.email}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-input-container>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button type="submit" mat-raised-button color="primary">保存</button>
+    <button mat-raised-button mat-dialog-close>关闭</button>
+  </mat-dialog-actions>
+</form>

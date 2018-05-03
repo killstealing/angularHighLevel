@@ -1,0 +1,8 @@
+<button type="button" mat-raised-button (click)="showJava()">Java article</button>
+<button type="button" mat-raised-button (click)="showAngular()">Angular article</button>
+<button type="button" mat-raised-button (click)="showFavorite()">Favorite article</button>
+<ul>
+  <li *ngFor="let item of articles | async">
+    {{item.id}} - {{item.title}} - {{item.category}}
+  </li>
+</ul>

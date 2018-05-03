@@ -1,0 +1,15 @@
+<form [formGroup]="formModel" (ngSubmit)="save($event)">
+  <h2 mat-dialog-title>{{dialogTitle}}</h2>
+  <mat-dialog-content>
+    <mat-input-container class="full-width">
+      <input type="text" matInput placeholder="项目名称" formControlName="title">
+    </mat-input-container>
+    <mat-input-container class="full-width">
+      <input type="text" matInput placeholder="项目描述" formControlName="descT">
+    </mat-input-container>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button type="submit" mat-raised-button color="primary">保存</button>
+    <button mat-raised-button mat-dialog-close>取消</button>
+  </mat-dialog-actions>
+</form>

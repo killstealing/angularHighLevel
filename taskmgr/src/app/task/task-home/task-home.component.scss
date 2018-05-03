@@ -1,0 +1,20 @@
+.mat-fab{
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+}
+.taskLists{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+app-task-list{
+    flex:0 0 auto;
+    overflow-y:scroll;
+    width:350px;
+}
+.drag-enter{
+    background-color: dimgray;
+}

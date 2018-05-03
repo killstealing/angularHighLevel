@@ -1,0 +1,17 @@
+<div class="taskLists">
+    <app-task-list *ngFor="let taskList of taskLists" [taskList]="taskList"
+    app-droppable
+    [dragEnterClass]="'drag-enter'">
+    <app-quick-task [taskList]="taskList" (tasksEvent)="refreshTasks($event)"></app-quick-task>
+        <app-task-header [taskList]="taskList" (newTaskEvent)="launchNewTaskDialog($event)"
+        (moveThisTaskListEvent)="handleMoveTaskListDialog($event)"
+        (updateTaskListEvent)="launchUpdateTaskListDialog($event)"
+        (deleteTaskListEvent)="launchDelConfirmDialog($event)"
+        ></app-task-header>
+        <app-task-item (updateTaskEvent)="launchUpdateTaskDialog($event)"
+             *ngFor="let task of taskList.tasks" [task]="task"></app-task-item>
+    </app-task-list>
+</div>
+<button mat-fab class="mat-fab" (click)="newTaskList($event)">
+    <mat-icon>add</mat-icon>
+  </button>

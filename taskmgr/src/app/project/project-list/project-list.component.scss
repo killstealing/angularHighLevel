@@ -1,0 +1,15 @@
+.mat-fab{
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+app-project-item{
+    flex: 0 0 360px;
+    height: 360px;
+    margin:10px;
+}

@@ -1,0 +1,9 @@
+<div class="container" [@listAnim]="items?.length">
+  <app-project-item *ngFor="let item of items" [item]="item" (editEvent)="launchEditDialog($event)"
+    (delProjectEvent)="launchDelDialog($event)">
+
+  </app-project-item>
+</div>
+<button mat-fab class="mat-fab" (click)="newProject($event)">
+  <mat-icon>add</mat-icon>
+</button>

@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <button (click)="toggleSidenav()" mat-icon-button>
+    <mat-icon svgIcon="1"></mat-icon>
+  </button>
+  <span>Angular</span>
+  <span class="fill-remain-space"></span>
+  <mat-slide-toggle (change)="toggleTheme($event.checked)">切换主题</mat-slide-toggle>
+</mat-toolbar>

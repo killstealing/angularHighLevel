@@ -1,0 +1,13 @@
+<form [formGroup]="formModel" (ngSubmit)="save($event)">
+  <mat-input-container>
+    <input type="text" matInput placeholder="请输入任务名称"
+    [(ngModel)]="desc"
+    formControlName="title" required>
+    <mat-error>不能为空</mat-error>
+    <button matSuffix mat-icon-button type="submit"><mat-icon>send</mat-icon></button>
+  </mat-input-container>
+  <!-- <mat-input-container>
+    <input type="text" matInput placeholder="test" [ngModel]="test" (ngModelChange)="test=$event">
+  </mat-input-container> -->
+  <!-- {{formM.value | json}} {{desc}} {{test}} -->
+</form>

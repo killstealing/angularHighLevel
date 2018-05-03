@@ -1,0 +1,17 @@
+const counter$=Rx.Observable.interval(1000).take(5);
+const subject=new Rx.Subject();
+const observer1={
+  next: (val)=>console.log('1:'+val),
+  error:(err)=>console.error('ERROR>>1:'+err),
+  complete:()=>console.log('1 is complete')
+};
+const observer2={
+  next: (val)=>console.log('2:'+val),
+  error:(err)=>console.error('ERROR>>2:'+err),
+  complete:()=>console.log('2 is complete')
+};
+subject.subscribe(observer1);
+setTimeout(function(){
+    subject.subscribe(observer2)
+},2000);
+counter$.subscribe(subject);

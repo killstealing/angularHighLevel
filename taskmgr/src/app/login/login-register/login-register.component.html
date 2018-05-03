@@ -1,0 +1,36 @@
+<form [formGroup]="formModel" (ngSubmit)="save(formModel,$event)">
+  <mat-card>
+    <mat-tab-group>
+      <mat-tab label="账号信息">
+        <mat-card-header>
+          <mat-card-title>注册：</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-input-container class="full-width">
+            <input type="text" matInput placeholder="您的email" formControlName="email">
+          </mat-input-container>
+          <mat-input-container class="full-width">
+            <input type="text" matInput placeholder="您的姓名" formControlName="name">
+          </mat-input-container>
+          <mat-input-container class="full-width">
+            <input type="text" matInput placeholder="您的密码" formControlName="password">
+          </mat-input-container>
+          <mat-input-container class="full-width">
+            <input type="text" matInput placeholder="重复输入您的密码" formControlName="repeat">
+          </mat-input-container>
+          <app-image-list-select [useSvgIcon]="true" [cols]="6" [title]="'选择头像：'" [items]="items" formControlName="avatar"></app-image-list-select>
+          <button type="submit" mat-raised-button color="primary">注册</button>
+        </mat-card-content>
+        <mat-card-actions>
+          <p class="text-right">还没有账户？<a routerLink="/register">注册</a></p>
+          <p class="text-right">忘记密码？<a href="">找回</a></p>
+        </mat-card-actions>
+      </mat-tab>
+      <mat-tab label="个人信息">
+        <div class="full-width">
+          <app-age-input formControlName="dateOfBirth"></app-age-input>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</form>

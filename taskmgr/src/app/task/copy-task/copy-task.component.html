@@ -1,0 +1,14 @@
+<form [formGroup]="formModel" (ngSubmit)="save($event)">
+  <h3 mat-dialog-title></h3>
+  <div mat-dialog-content>
+    <mat-select placeholder="请选择任务列表" formControlName="newItem">
+      <mat-option *ngFor="let item of newTaskList" [value]="item.id">
+        {{item.title}}
+      </mat-option>
+    </mat-select>
+  </div>
+  <div mat-dialog-actions>
+    <button type="submit" mat-raised-button color="primary">保存</button>
+    <button mat-dialog-close mat-raised-button>取消</button>
+  </div>
+</form>
