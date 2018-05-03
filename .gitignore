@@ -1,0 +1,7 @@
+*.class
+*.classpath
+*.project
+*.prefs
+org.eclipse.*.xml
+
+taskmgr/node_modules/
