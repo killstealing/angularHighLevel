@@ -1,0 +1,12 @@
+<form #f="ngForm" (ngSubmit)="onSubmit($event,f)">
+  <h2 mat-dialog-title>邀请组员:</h2>
+  <div mat-dialog-content>
+    <app-chips-list [label]="'邀请成员'" name="members" [(ngModel)]="members">
+    </app-chips-list>
+  </div>
+  <div mat-dialog-actions>
+    <button type="submit" mat-raised-button class="primary"
+     [disabled]="!f.valid">保存</button>
+    <button type="button" mat-button mat-dialog-close>关闭</button>
+  </div>
+</form>

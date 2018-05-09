@@ -1,0 +1,33 @@
+mat-sidenav{
+    width: 300px;
+}   
+mat-sidenav-container.myapp-dark-theme{
+    background-color: black;
+    color: white;
+}
+
+.square{
+    width: 100px;
+    height:100px;
+    background-color: black;
+}
+
+main{
+    overflow: auto;
+}
+
+.site{
+    overflow: auto;
+}
+
+// .site{
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// .site main{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex: 1 1 auto;
+// }

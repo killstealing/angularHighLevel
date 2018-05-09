@@ -1,0 +1,16 @@
+<div>
+    <!-- 210103199101011234 -->
+  <mat-select placeholder="证件类型" (change)="onIdTypeChange($event.value)"
+    [(ngModel)]="identity.identityType">
+    <mat-option *ngFor="let type of identityTypes" [value]="type.value">
+      {{type.label}}
+    </mat-option>
+  </mat-select>
+</div>
+<div class="id-input">
+  <mat-input-container class="full-width">
+    <input matInput type="text" placeholder="证件号码" 
+      (change)="OnIdNoChange($event.target.value)" [(ngModel)]="identity.identityNo">
+    <mat-error></mat-error>
+  </mat-input-container>
+</div>

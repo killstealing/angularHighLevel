@@ -1,0 +1,18 @@
+<button mat-raised-button color="primary" (click)="showJava()">Java</button>
+<button mat-raised-button color="primary" (click)="showAngualr()">Angular</button>
+<button mat-raised-button color="primary" (click)="showFavorite()">My Favorite</button>
+
+<ul>
+  <li *ngFor="let item of articles | async">
+    {{item.id}}-{{item.title}}-{{item.category}}
+  </li>
+</ul>
+
+<!-- <p>
+  {{ (quote$ | async)?.cn}}
+
+<img [src]="(quote$ | async)?.pic" alt="quote image">
+{{(quote$ | async)?.en}}
+</p>
+
+<button mat-raised-button color="primary" (click)="callQuote()">call quote</button> -->

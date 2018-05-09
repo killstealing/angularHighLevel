@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form,$event)">
+  <h3 mat-dialog-title>{{title}}</h3>
+  <div mat-dialog-content>
+    <mat-input-container class="full-width">
+      <input formControlName="name" type="text" matInput placeholder="列表名称">
+    </mat-input-container>
+  </div>
+  <div mat-dialog-actions>
+    <button type="submit" mat-raised-button class="primary" 
+      [disabled]="!form.valid">保存</button>
+    <button type="button" mat-button mat-dialog-close>关闭</button>
+  </div>
+</form>
