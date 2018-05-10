@@ -24,9 +24,13 @@ export class ProjectListComponent implements OnInit {
   constructor(public dialog: MatDialog, public projectService: ProjectService,
     private cd: ChangeDetectorRef) { }
   ngOnInit() {
-    this.projectService.getProjects().subscribe(list => {
-      this.items = list;
-      this.cd.markForCheck();
+    this.projectService.getProjects().subscribe((list: Project[]) => {
+      if (null != list && JSON.stringify(list) === '{}') {
+        alert('System internal error!');
+      } else {
+        this.items = list;
+        this.cd.markForCheck();
+      }
     });
   }
 

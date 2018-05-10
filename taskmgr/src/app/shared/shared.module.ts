@@ -1,3 +1,4 @@
+import { LoadingService } from './../common/loading/loading.service';
 import { QuoteService } from './../service/quote.service';
 import { DirectiveModule } from './../directive/directive.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -25,6 +26,9 @@ import { AgeInputComponent } from './age-input/age-input.component';
 import { ChipsListComponent } from './chips-list/chips-list.component';
 import { IdentityInputComponent } from './identity-input/identity-input.component';
 import { AreaListComponent } from './area-list/area-list.component';
+import { LoadingComponent } from '../common/loading/loading.component';
+import { httpInterceptorProviders } from '../service/interceptors/index';
+import { HttpErrorHandler } from '../service/http-error-handler.service';
 
 @NgModule({
   imports: [
@@ -86,10 +90,14 @@ import { AreaListComponent } from './area-list/area-list.component';
     DirectiveModule,
     ImageListSelectComponent,
     AgeInputComponent,
-    ChipsListComponent
+    ChipsListComponent,
+    LoadingComponent
   ],
-  providers: [SettingsService, ProjectService, UserService, TaskService, QuoteService],
-  declarations: [ConfirmComponent, AlertComponent, Page404Component, ImageListSelectComponent, AgeInputComponent, ChipsListComponent, IdentityInputComponent, AreaListComponent],
+  providers: [SettingsService, ProjectService, UserService, TaskService, QuoteService,
+    LoadingService,
+    HttpErrorHandler, httpInterceptorProviders],
+  declarations: [ConfirmComponent, AlertComponent, Page404Component, ImageListSelectComponent,
+    AgeInputComponent, ChipsListComponent, IdentityInputComponent, AreaListComponent, LoadingComponent],
   entryComponents: [ConfirmComponent, AlertComponent]
 })
 export class SharedModule { }
