@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../../domain/article.model';
 import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -14,7 +15,7 @@ import { Store } from '@ngrx/store';
 })
 export class ArticleComponent implements OnInit {
   articles: Observable<Article[]>;
-  constructor(private store: Store<ArticleState>) {
+  constructor(private store: Store<ArticleState>, private router: Router) {
     this.articles = this.store.select(articleReducer.getArticles);
   }
 
@@ -31,5 +32,9 @@ export class ArticleComponent implements OnInit {
     this.store.dispatch(new articleActions.FavoriteArticleAction(FAVORITE_ARTICLES));
   }
 
+  openNewWindow() {
+    // this.router.navigate(['/newWindow', { data: 'aaa' }]);
+    window.open('/newWindow', '_blank');
+  }
 
 }

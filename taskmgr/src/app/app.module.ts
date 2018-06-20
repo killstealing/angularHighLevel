@@ -6,10 +6,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { NewWindowComponent } from './container/new-window/new-window.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NewWindowComponent,
   ],
   imports: [
     BrowserModule,
