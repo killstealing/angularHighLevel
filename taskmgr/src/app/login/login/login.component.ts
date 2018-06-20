@@ -2,6 +2,7 @@ import { QuoteService } from './../../service/quote.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../../domain/quote.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
   formModel: FormGroup;
   quote: Quote;
   dynamicCondition: string;
-  constructor(private fb: FormBuilder, private quoteSerivce: QuoteService) {
+  constructor(private fb: FormBuilder, private quoteSerivce: QuoteService,
+    private router: Router) {
     this.formModel = this.fb.group({
       email: ['', [Validators.required, Validators.email, this.validate]],
       password: ['', [Validators.required]]
@@ -31,7 +33,7 @@ export class LoginComponent implements OnInit {
     // if (this.dynamicCondition === '') {
     //   this.formModel.controls['email'].setValidators(this.validate);
     // }
-
+    this.router.navigate(['/projectList']);
   }
 
   validate(c: FormControl): { [key: string]: any } {

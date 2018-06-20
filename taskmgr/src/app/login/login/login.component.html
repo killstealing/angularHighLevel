@@ -9,7 +9,7 @@
         <mat-error>{{formModel.controls['email'].errors | json}}</mat-error>
       </mat-input-container>
       <mat-input-container class="full-width">
-        <input type="text" matInput placeholder="您的密码" formControlName="password" required>
+        <input type="password" matInput placeholder="您的密码" formControlName="password" required>
       </mat-input-container>
       <button type="submit" mat-raised-button color="primary" [disabled]="!formModel.valid">登录</button>
     </mat-card-content>
